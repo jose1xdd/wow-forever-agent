@@ -45,7 +45,7 @@ Usa el Python de WSL, un nuevo entorno `.venv` y cambia `mcp.servers.azeroth.com
 
 La primera vez que OpenCode busque en la web, autoriza la operación y elige un proveedor disponible. Puedes conectarlo mediante `/connect` o usar una variable del proveedor (p. ej. `TAVILY_API_KEY`). [Documentación de búsqueda web](https://opencode.ai/docs/websearch/). No hace falta una clave de búsqueda para consultas locales.
 
-**También necesitas un modelo conversacional disponible en OpenCode**, distinto del modelo local de embeddings. Si el proveedor actual rechaza una solicitud por créditos o límite de tokens, conecta otro proveedor/modelo desde OpenCode o ajusta el presupuesto de tu cuenta; eso no se soluciona modificando la base de datos.
+**También necesitas un modelo conversacional disponible en OpenCode**, distinto del modelo local de embeddings. `opencode.jsonc` fija para este proyecto `openai/gpt-6-sol`, que se comprobó en una consulta real; puedes cambiarlo con `/models`. Si el proveedor rechaza una solicitud por créditos o límite de tokens, conecta otro proveedor/modelo desde OpenCode o ajusta el presupuesto de tu cuenta; eso no se soluciona modificando la base de datos.
 
 Ejemplos:
 

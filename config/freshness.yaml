@@ -1,0 +1,13 @@
+freshness_hours:
+  hotfix: 6
+  changes: 12
+  pvp: 48
+  builds: 72
+  classes: 72
+  items: 168
+  dungeons: 168
+  raids: 168
+  leveling: 168
+  legacy: 168
+  professions: 336
+  general: 168

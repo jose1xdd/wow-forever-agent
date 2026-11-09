@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "azeroth-companion",
+  "mcp": {
+    "servers": {
+      "azeroth": {
+        "type": "local",
+        "command": ["C:/Users/Nelcy/AgenteWow/.venv/Scripts/python.exe", "-m", "wow_knowledge.mcp_server"],
+        "cwd": "C:/Users/Nelcy/AgenteWow",
+        "timeout": { "startup": 120000, "execution": 600000 }
+      }
+    }
+  }
+}

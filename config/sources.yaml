@@ -1,0 +1,42 @@
+sources:
+  - name: Blizzard WoW
+    domain: worldofwarcraft.blizzard.com
+    trust: official
+    seeds:
+      - https://worldofwarcraft.blizzard.com/en-us/news/24307383
+    refresh_hours: 12
+  - name: Blizzard News
+    domain: news.blizzard.com
+    trust: official
+    seeds: []
+    refresh_hours: 12
+  - name: WoWGuildHub client data
+    domain: wowguildhub.com
+    trust: client_data_claimed
+    seeds:
+      - https://wowguildhub.com/wow-forever/guide
+    refresh_hours: 48
+  - name: Forever Builds
+    domain: wowforeverbuilds.com
+    trust: community
+    seeds:
+      - https://wowforeverbuilds.com/
+    refresh_hours: 48
+  - name: Forever GG
+    domain: wowforever.gg
+    trust: community
+    seeds:
+      - https://wowforever.gg/en/forever/
+    refresh_hours: 72
+  - name: Icy Veins
+    domain: www.icy-veins.com
+    trust: specialist
+    seeds:
+      - https://www.icy-veins.com/wow-forever/class-guides
+    refresh_hours: 72
+  - name: Method
+    domain: www.method.gg
+    trust: specialist
+    seeds:
+      - https://www.method.gg/wow-forever/class-guides
+    refresh_hours: 72

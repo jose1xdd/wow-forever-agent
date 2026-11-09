@@ -18,5 +18,29 @@ services:
       retries: 10
       start_period: 15s
 
+  mcp:
+    profiles: ["mcp"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: azeroth-companion-mcp:local
+    # On demand: `docker compose run --rm -T mcp`. Never `up -d mcp` for STDIO.
+    stdin_open: true
+    tty: false
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:?Set POSTGRES_USER}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:?Set POSTGRES_DB}
+      HF_HOME: /model-cache
+      WOW_EMBEDDINGS_ENABLED: ${WOW_EMBEDDINGS_ENABLED:-true}
+      WOW_EMBEDDING_MODEL: ${WOW_EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
+      WOW_MAX_DOWNLOAD_BYTES: ${WOW_MAX_DOWNLOAD_BYTES:-2097152}
+      WOW_USER_AGENT: ${WOW_USER_AGENT:-AzerothCompanion/0.1 (personal research; local indexing)}
+    volumes:
+      - azeroth_model_cache:/model-cache
+
 volumes:
   azeroth_pgdata:
+  azeroth_model_cache:

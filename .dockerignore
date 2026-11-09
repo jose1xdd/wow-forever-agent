@@ -1,0 +1,11 @@
+.env
+.venv/
+.cache/
+.git/
+.pytest_cache/
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+tests/
+*.dump
+*.sql.gz

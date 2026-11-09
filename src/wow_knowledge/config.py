@@ -1,8 +1,9 @@
+import os
 from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("WOW_PROJECT_ROOT", Path(__file__).resolve().parents[2])).resolve()
 
 
 class Settings(BaseSettings):
